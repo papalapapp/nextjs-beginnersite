@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box !important;
+}
+
+.costum-img {
+  background-image: url("../public/HeroImg5.jpg");
+}
+
+.poppins {
+  font-family: "Raleway", sans-serif;
+}
