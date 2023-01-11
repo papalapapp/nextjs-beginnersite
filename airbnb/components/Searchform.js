@@ -1,57 +1,60 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Searchform() {
+  const [currentFocus, setCurrentFocus] = useState("")
+
+
   return (
-    <form class="absolute bottom-[-32px] w-[97%] max-w-[990px] mx-auto h-[110px] bg-whit drop-shadow-xl z-[3] rounded-3xl flex flex-wrap bg-white">
-      <div class="flex-grow inline-flex flex-col relative">
+    <form className="absolute bottom-[-32px] w-[97%] max-w-[990px] mx-auto min-h-[110px] bg-whit drop-shadow-xl z-[3] md:rounded-3xl rounded-3xl p-3 md:p-0  flex flex-wrap bg-white">
+      <div className="flex-grow inline-flex flex-col relative h-[64px] md:h-[110px]">
         <input
           type="text"
           name="location"
           id="location"
-          class="h-full pb-0 pt-6 pl-12 text-base border-none active:border-none rounded-3xl hover:bg-gray-200 peer/location focus:bg-white bg-inherit focus:border-none "
+          className="h-full pb-0 pt-6 md:pl-12 text-base active:border-none focus:border-none rounded-3xl hover:bg-gray-200 peer/location focus:bg-white focus:shadow-md bg-inherit border-none"
           placeholder="Where are you going?"
         />
         <label
-          for="location"
-          class="flex absolute text-2xl font-semibold items-center top-5 left-5 peer-focus/location:text-sm"
+          htmlFor="location"
+          className="flex absolute md:text-2xl text-md font-semibold items-center md:top-5 md:left-5 top-2 left-3 peer-focus/location:text-sm"
         >
           <svg
-            class="w-6 h-6 mr-1"
+            className="md:w-6 md:h-6 w-4 h-4 mr-1"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
             ></path>
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
             ></path>
           </svg>
           Location
         </label>
       </div>
-      <div class="flex-grow inline-flex flex-col relative pl-4 pr-4">
+      <div className="flex-grow w-full md:w-fit inline-flex flex-col relative h-[64px] md:h-[110px] mt-1 md:mt-0">
         <input
           type="text"
           name="date"
           id="date"
-          class="h-full pb-0 pt-6 pl-12 text-base active:border-none focus:border-none rounded-3xl hover:bg-gray-200 peer/date focus:bg-white focus:shadow-md bg-inherit border-none"
+          className="h-full pb-0 pt-6 md:pl-12 text-base active:border-none focus:border-none rounded-3xl hover:bg-gray-200 peer/date focus:bg-white focus:shadow-md bg-inherit border-none"
           placeholder="Add Date"
         />
         <label
-          for="date"
-          class="flex absolute text-2xl font-semibold items-center top-5 left-8 peer-focus/date:text-sm"
+          htmlFor="date"
+          className="flex absolute md:text-2xl text-md font-semibold items-center md:top-5 md:left-5 top-2 left-3 peer-focus/date:text-sm truncate"
         >
           <svg
-            className="w-6 h-6 mr-1"
+            className="md:w-6 md:h-6 w-4 h-4 mr-1"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -66,23 +69,23 @@ function Searchform() {
           </svg>
           Check In/Check Out
         </label>
-        <div className="absolute top-1/2 transform translate-y-[-50%] left-0 w-[1px] bg-gray-300 h-1/2 "></div>
+        <div className="absolute top-1/2 transform translate-y-[-50%] left-0 w-[1px] bg-gray-300 h-1/2 md:block hidden"></div>
 
       </div>
-      <div class="flex-grow max-w-[225px] inline-flex flex-col relative">
+      <div className="flex-grow md:max-w-[225px] inline-flex flex-col relative h-[64px] md:h-[110px] mt-1 md:mt-0">
         <input
           type="text"
           name="guests"
           id="guests"
-          class="h-full pb-0 pt-6 pl-12 text-base active:border-none focus:border-none rounded-3xl hover:bg-gray-200 peer/date focus:bg-white focus:shadow-md bg-inherit border-none"
+          className="h-full pb-0 pt-6 md:pl-12 text-base active:border-none focus:border-none rounded-3xl hover:bg-gray-200 peer/guests focus:bg-white focus:shadow-md bg-inherit border-none"
           placeholder="Add Guests"
         />
         <label
-          for="guests"
-          class="flex absolute text-2xl font-semibold items-center top-5 left-5 peer-focus/date:text-sm"
+          htmlFor="guests"
+          className="flex absolute md:text-2xl text-md font-semibold items-center md:top-5 md:left-5 top-2 left-3 peer-focus/guests:text-sm"
         >
           <svg
-            className="w-6 h-6 mr-1"
+            className="md:w-6 md:h-6 w-4 h-4 mr-1"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -97,11 +100,11 @@ function Searchform() {
           </svg>
           Guests
         </label>
-        <div className="absolute top-1/2 transform translate-y-[-50%] left-0 w-[1px] bg-gray-300 h-1/2 "></div>
+        <div className="absolute top-1/2 transform translate-y-[-50%] left-0 w-[1px] bg-gray-300 h-1/2 md:block hidden"></div>
       </div>
-      <div className="w-[80px] h-[80px] rounded-full bg-[#FFC700] self-center mr-12 ml-6 flex justify-center items-center">
+      <button className="lg:w-[80px] lg:h-[80px] w-full h-[40px] rounded-full bg-[#FFC700] self-center lg:mr-12 lg:ml-6 flex justify-center items-center mx-4 mb-4 lg:mb-0 lg:mx-0 mt-3 md:mt-0 " type="submit" >
         <svg
-          className="w-7 h-7 text-white"
+          className="lg:w-7 lg:h-7 w-4 h-4 text-white"
           fill="currentColor"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"
@@ -112,7 +115,8 @@ function Searchform() {
             clipRule="evenodd"
           />
         </svg>
-      </div>
+        <span className="lg:hidden inline text-white ml-2">Search</span>
+      </button>
     </form>
   );
 }

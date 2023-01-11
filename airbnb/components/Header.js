@@ -19,7 +19,7 @@ function Header() {
       </Navbar.Brand>
      
       <div className="flex">
-        <button className="mr-4 md:mr-8 text-sm md:text-base py-2 px-5 border-2 rounded-full hover:scale-105 transition duration-200 ease-out active:bg-gray-100">
+        <button className="mr-4 md:mr-8 text-sm md:text-base py-2 px-5 border-2 rounded-full hover:scale-105 transition duration-200 ease-out active:bg-gray-100 hover:shadow-md ">
           Become a Host
         </button>
         <Dropdown
