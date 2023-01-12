@@ -1,22 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function Searchform() {
-  const [currentFocus, setCurrentFocus] = useState("")
+  const [currentFocus, setCurrentFocus] = useState("");
 
+  useEffect(() => {
+    const focus = document.activeElement.id
+    console.log(focus)
+  }, [])
 
   return (
-    <form className="absolute bottom-[-32px] w-[97%] max-w-[990px] mx-auto min-h-[110px] bg-whit drop-shadow-xl z-[3] md:rounded-3xl rounded-3xl p-3 md:p-0  flex flex-wrap bg-white">
-      <div className="flex-grow inline-flex flex-col relative h-[64px] md:h-[110px]">
+    <form className="absolute bottom-[-32px] w-[95%] max-w-[1000px] mx-auto min-h-[110px] drop-shadow-2xl z-[3] lg:rounded-full rounded-3xl p-3 md:p-0  flex flex-wrap bg-white ">
+      <div className="flex-grow md:max-w-[270px] flex flex-col relative h-[64px] md:h-[110px]">
         <input
           type="text"
+          onFocus={() => setCurrentFocus("location")}
           name="location"
           id="location"
-          className="h-full pb-0 pt-6 md:pl-12 text-base active:border-none focus:border-none rounded-3xl hover:bg-gray-200 peer/location focus:bg-white focus:shadow-md bg-inherit border-none"
+          className="h-full pb-0 pt-6 lg:pl-[62px] md:pl-12 text-base active:border-none focus:border-none lg:rounded-full rounded-3xl hover:bg-gray-100 peer/location focus:bg-gray-100 bg-inherit border-none transition-all duration-200 md:focus:scale-105 md:focus:shadow-lg "
           placeholder="Where are you going?"
         />
         <label
           htmlFor="location"
-          className="flex absolute md:text-2xl text-md font-semibold items-center md:top-5 md:left-5 top-2 left-3 peer-focus/location:text-sm"
+          className="flex absolute md:text-2xl text-md font-semibold items-center md:top-5 lg:left-8 md:left-5 top-2 left-3 peer-focus/location:text-sm"
         >
           <svg
             className="md:w-6 md:h-6 w-4 h-4 mr-1"
@@ -41,17 +46,18 @@ function Searchform() {
           Location
         </label>
       </div>
+      <div className="w-[1px] h-[55px] self-center bg-gray-300 hidden md:block"></div>
       <div className="flex-grow w-full md:w-fit inline-flex flex-col relative h-[64px] md:h-[110px] mt-1 md:mt-0">
         <input
           type="text"
           name="date"
           id="date"
-          className="h-full pb-0 pt-6 md:pl-12 text-base active:border-none focus:border-none rounded-3xl hover:bg-gray-200 peer/date focus:bg-white focus:shadow-md bg-inherit border-none"
+          className="h-full pb-0 pt-6 lg:pl-[64px] md:pl-12 text-base active:border-none focus:border-none rounded-3xl lg:rounded-full hover:bg-gray-100 peer/date bg-inherit border-none focus:bg-gray-100 transition-all duration-200 md:focus:scale-105 md:focus:shadow-lg"
           placeholder="Add Date"
         />
         <label
           htmlFor="date"
-          className="flex absolute md:text-2xl text-md font-semibold items-center md:top-5 md:left-5 top-2 left-3 peer-focus/date:text-sm truncate"
+          className="flex absolute md:text-2xl text-md font-semibold items-center md:top-5 lg:left-8 md:left-5 top-2 left-3 peer-focus/date:text-sm truncate"
         >
           <svg
             className="md:w-6 md:h-6 w-4 h-4 mr-1"
@@ -69,20 +75,19 @@ function Searchform() {
           </svg>
           Check In/Check Out
         </label>
-        <div className="absolute top-1/2 transform translate-y-[-50%] left-0 w-[1px] bg-gray-300 h-1/2 md:block hidden"></div>
-
       </div>
-      <div className="flex-grow md:max-w-[225px] inline-flex flex-col relative h-[64px] md:h-[110px] mt-1 md:mt-0">
+      <div className="w-[1px] h-[55px] self-center bg-gray-300 hidden md:block"></div>
+      <div className="flex-grow lg:max-w-[225px] md:max-w-[175px] inline-flex flex-col relative h-[64px] md:h-[110px] mt-1 md:mt-0">
         <input
           type="text"
           name="guests"
           id="guests"
-          className="h-full pb-0 pt-6 md:pl-12 text-base active:border-none focus:border-none rounded-3xl hover:bg-gray-200 peer/guests focus:bg-white focus:shadow-md bg-inherit border-none"
+          className="h-full pb-0 pt-6 lg:pl-[64px] md:pl-12 text-base active:border-none focus:border-none rounded-3xl lg:rounded-full hover:bg-gray-100 peer/guests focus:bg-gray-100 focus:shadow-md bg-inherit border-none transition-all duration-200 md:focus:scale-105 md:focus:shadow-lg "
           placeholder="Add Guests"
         />
         <label
           htmlFor="guests"
-          className="flex absolute md:text-2xl text-md font-semibold items-center md:top-5 md:left-5 top-2 left-3 peer-focus/guests:text-sm"
+          className="flex absolute md:text-2xl text-md font-semibold items-center md:top-5 lg:left-8 md:left-5 top-2 left-3 peer-focus/guests:text-sm"
         >
           <svg
             className="md:w-6 md:h-6 w-4 h-4 mr-1"
@@ -100,9 +105,11 @@ function Searchform() {
           </svg>
           Guests
         </label>
-        <div className="absolute top-1/2 transform translate-y-[-50%] left-0 w-[1px] bg-gray-300 h-1/2 md:block hidden"></div>
       </div>
-      <button className="lg:w-[80px] lg:h-[80px] w-full h-[40px] rounded-full bg-[#FFC700] self-center lg:mr-12 lg:ml-6 flex justify-center items-center mx-4 mb-4 lg:mb-0 lg:mx-0 mt-3 md:mt-0 " type="submit" >
+      <button
+        className="lg:w-[80px] lg:h-[80px] w-full h-[40px] rounded-full bg-[#FFC700] self-center lg:mr-4 lg:ml-4 flex justify-center items-center mx-2 mb-2 lg:mb-0 lg:mx-0 mt-2 lg:mt-0 lg:hover:relative lg:hover:w-[150px] lg:hover:justify-between lg:hover:px-7 group/btn transition-all duration-200"
+        type="submit"
+      >
         <svg
           className="lg:w-7 lg:h-7 w-4 h-4 text-white"
           fill="currentColor"
@@ -115,7 +122,7 @@ function Searchform() {
             clipRule="evenodd"
           />
         </svg>
-        <span className="lg:hidden inline text-white ml-2">Search</span>
+        <span className="lg:hidden lg:group-hover/btn:block inline text-white ml-2">Search</span>
       </button>
     </form>
   );

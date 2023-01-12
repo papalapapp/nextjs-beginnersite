@@ -2,7 +2,7 @@ import React from "react";
 
 function Features() {
   return (
-    <section className="container mx-auto mt-[136px] px-2 xl:px-0">
+    <section className="container mx-auto mt-[140px] px-2 xl:px-0">
       <h2 className="text-3xl lg:text-4xl font-bold text-center">
         Experience the comfort of a home away from home
       </h2>
