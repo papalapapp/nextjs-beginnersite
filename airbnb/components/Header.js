@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
-function Header() {
+function Header({ container=true }) {
   return (
-    <Navbar fluid={false} rounded={true} className="sticky top-0 z-10">
+    <Navbar fluid={!container} rounded={true} className="sticky top-0 z-20 bg-white/75 backdrop-blur-lg">
       <Navbar.Brand href="/">
         <Image
           src="/Logo.svg"

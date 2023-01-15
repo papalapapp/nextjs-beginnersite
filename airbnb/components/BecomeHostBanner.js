@@ -13,10 +13,10 @@ function BecomeHostBanner() {
             for homeowners to advertise their holiday homes and earn extra
             income by renting them out to travelers.
           </p>
-          <button className="px-6 py-2 bg-[#FFC700] rounded-lg flex mt-10">
+          <button className="px-6 py-2 bg-[#FFC700] rounded-lg flex mt-10 group/btn hover:shadow-lg transition-shadow duration-200">
             Get Started
             <svg
-            className="w-6 h-6 ml-2"
+              className="w-6 h-6 ml-2 group-hover/btn:translate-x-2 transition-all duration-200 ease-out"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -28,12 +28,16 @@ function BecomeHostBanner() {
                 d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
               />
             </svg>
-          
-          
           </button>
         </div>
         <div className="absolute bg-green-200 right-0 bottom-0 xl:w-fit md:w-[370px] w-[200px] ">
-          <Image src="/becomeHost.png" width={500} height={356} className="z-[1]"/>
+          <Image
+            src="/becomeHost.png"
+            width={500}
+            height={356}
+            className="z-[1]"
+            alt="3D Illustration about turism"
+          />
         </div>
       </div>
     </section>
