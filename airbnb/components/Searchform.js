@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 function Searchform() {
@@ -106,9 +107,9 @@ function Searchform() {
           Guests
         </label>
       </div>
-      <button
+      <Link
         className="lg:w-[80px] lg:h-[80px] w-full h-[40px] rounded-full bg-[#FFC700] self-center lg:mr-4 lg:ml-4 flex justify-center items-center mx-2 mb-2 lg:mb-0 lg:mx-0 mt-2 lg:mt-0 lg:hover:relative lg:hover:w-[150px] lg:hover:justify-between lg:hover:px-7 group/btn transition-all duration-200"
-        type="submit"
+        href="/search"
       >
         <svg
           className="lg:w-7 lg:h-7 w-4 h-4 text-white"
@@ -123,7 +124,7 @@ function Searchform() {
           />
         </svg>
         <span className="lg:hidden lg:group-hover/btn:block inline text-white ml-2">Search</span>
-      </button>
+      </Link>
     </form>
   );
 }

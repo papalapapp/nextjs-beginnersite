@@ -15,7 +15,7 @@ export default function Home({ accommodationSuggestions }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+      <Header searchBarShowingHeight={675}/>
       <main className="overflow-x-hidden w-full">
         <Hero />
         <Features />

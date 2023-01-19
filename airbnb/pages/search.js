@@ -17,24 +17,26 @@ function search() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header container={false}/>
-      <main className="overflow-x-hidden w-full min-h-screen">
-        <div className="flex">
-          <div className="flex-grow  h-screen mt-6 px-4">
-            <SearchList />
-          </div>
-          <div className="flex-grow max-w-[38vw]  h-screen mt-6 px-4 sticky top-[100px]">
-              <Image
-              alt="map"
-              src="/map.png"
-              width={1600}
-              height={2500}
-              className="h-full rounded-3xl"
-              style={{ objectFit: "cover" }} />
-            </div>
+      <Header container={false} />
+      <main className="overflow-x-hidden w-full">
+       
+        <div className="md:w-[50vw] lg:w-[60vw] xl:w-[65vw] w-screen pl-4 pr-2 pt-4 pb-4 border-t">
+          <SearchList />
         </div>
       </main>
-      <FooterComp container={false}/>
+
+      <aside className="hidden md:block md:w-[50vw] lg:w-[40vw] xl:w-[35vw] h-screen sticky bottom-0 float-right pt-[90px] pl-2 pr-4 pb-4">
+        <Image
+          alt="map"
+          src="/map.png"
+          width={1600}
+          height={2500}
+          className="h-full rounded-3xl"
+          style={{ objectFit: "cover" }}
+        />
+      </aside>
+
+      <FooterComp container={false} />
     </>
   );
 }
