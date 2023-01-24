@@ -7,7 +7,7 @@ function Features() {
         Experience the comfort of a home away from home
       </h2>
       <p className="poppins text-center text-lg lg:text-xl text-gray-500 font-regular mt-4 max-w-[800px] mx-auto">
-        We're a vacation rental platform that connects travelers with unique,
+        We are a vacation rental platform that connects travelers with unique,
         comfortable, and convenient accommodations around the world.
       </p>
       <div className="flex flex-wrap mt-[64px] lg:justify-between justify-center">
@@ -51,7 +51,7 @@ function Features() {
             Convenient booking and payment
           </h3>
           <p className="mt-2 poppins font-regular text-gray-500">
-            StayNest's platform makes it easy to search for and book rentals,
+            StayNests platform makes it easy to search for and book rentals,
             with a secure online booking system and a variety of payment
             options.
           </p>

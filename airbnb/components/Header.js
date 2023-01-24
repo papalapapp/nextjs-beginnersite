@@ -47,8 +47,8 @@ function Header({ container = true, searchBarShowingHeight = 0 }) {
         <div
           className={
             height >= searchBarShowingHeight
-              ? "relative hover:scale-105 transition duration-200 ease-out lg:w-[22%] opacity-1 pointer-events-auto"
-              : "relative hover:scale-105 transition duration-200 ease-out lg:w-[22%] opacity-0 pointer-events-none"
+              ? "relative hover:scale-105 transition duration-200 ease-out lg:w-[22%] w-[100px] opacity-1 pointer-events-auto"
+              : "relative hover:scale-105 transition duration-200 ease-out lg:w-[22%] w-[100px] opacity-0 pointer-events-none"
           }
           onClick={() => setIsSearching(true)}
         >
@@ -56,6 +56,7 @@ function Header({ container = true, searchBarShowingHeight = 0 }) {
             type="text"
             placeholder="Start your Search"
             className="border-1 border-gray-200 rounded-full py-2 drop-shadow w-full"
+            onChange={() => setIsSearching(true)}
           />
           <div className="absolute top-1/2 translate-y-[-50%] right-2 rounded-full bg-[#FFC700] w-7 h-7 flex justify-center items-center">
             <svg

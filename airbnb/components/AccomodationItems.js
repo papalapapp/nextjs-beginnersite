@@ -5,7 +5,7 @@ import React from "react";
 function AccomodationItems({ stretched, data }) {
   return (
     <>
-      <div className={stretched ? "flex flex-col lg:flex-row w-full lg:h-[250px] h-[400px] bg-white rounded-3xl hover:drop-shadow-xl drop-shadow-lg hover:scale-[101%] overflow-hidden transition-all duration-300 ease-out relative" : "flex flex-col w-full h-[410px] bg-white rounded-3xl hover:drop-shadow-xl drop-shadow-lg hover:scale-[101%] overflow-hidden transition-all duration-300 ease-out relative "}>
+      <div className={stretched ? "flex flex-col lg:flex-row w-full lg:h-[250px] h-[400px] bg-white rounded-3xl hover:shadow-xl shadow-lg hover:scale-[101%] overflow-hidden transition-all duration-300 ease-out relative" : "flex flex-col w-full h-[410px] bg-white rounded-3xl hover:shadow-xl shadow-lg hover:scale-[101%] overflow-hidden transition-all duration-300 ease-out relative "}>
         {/* Like Btn */}
         <div className="absolute top-2 right-2 z-10">
           <Tooltip
